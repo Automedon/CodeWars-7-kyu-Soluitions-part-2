@@ -1,19 +1,21 @@
 /*
-Apparently "Put A Pillow On Your Fridge Day is celebrated on the 29th of May each year, in Europe and the U.S. The day is all about prosperity, good fortune, and having bit of fun along the way."
+This Kata is intended as a small challenge for my students
 
-All seems very weird to me.
+All Star Code Challenge #28
 
-Nevertheless, you will be given an array of two strings (s). First find out if the first string contains a fridge... (i've deemed this as being 'n', as it looks like it could hold something).
+You've been annoyed by weather reports one time too many! Celsius...Fahrenheit...why don't they ever give both!?
 
-Then check that the second string has a pillow - deemed 'B' (struggled to get the obvious pillow-esque character).
+Create a function called convertCF()/convert_c_f() (depending on language) that accepts 2 arguments, an integer of the temperature, and a string of length 1 ("c" or "f") denoting which scale the integer should be converted to (Celsius and Fahrenheit, respectively). The function should return a number, which is the conversion from one scale to the other.
 
-If the pillow is on top of the fridge - it must be May 29th! Or a weird house... Return true; For clarity, on top means right on top, ie in the same index position.
+By default, the conversion should convert to Celsius if a 2nd argument is not provided; in Python, Ruby and Crystal round up to the first digit.
 
-If the pillow is anywhere else in the 'house', return false;
+convertCF(60, "f"); // => 140
+convertCF(32, "c"); // => 0
+convertCF(50); // => 10
+convertCF(100, "w"); // => Error
+Info on how to operate the conversion
 
-There may be multiple fridges, and multiple pillows. But you need at least 1 pillow ON TOP of a fridge to return true. Multiple pillows on fridges should return true also.
-
-100 random tests
+Note: If the 2nd argument provided is NOT "c" or "f", an error (InvalidArgumentException in PHP) should be thrown. The conversion should work with negative numbers, too.
 */
 function convertCF(num, scale){
   if (scale==='f') return num*9/5+32
